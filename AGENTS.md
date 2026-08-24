@@ -55,10 +55,15 @@ Sebelum bertindak, pilih skill yang cocok. Jika ada kemungkinan relevan, baca `S
 | Bug, test gagal, build/runtime error | `debugging-and-error-recovery` | `test-driven-development` |
 | Review perubahan sebelum merge | `code-review-and-quality` | `security-and-hardening` bila menyentuh data/auth |
 | Input user, auth, PII, upload, webhook, API eksternal | `security-and-hardening` | `test-driven-development` |
+| Scrape, crawl, dynamic page, adaptive parser, RAG ingestion, atau web extraction | `scrapling-official` | `security-and-hardening` |
 | Deployment, release, migration, rollout | `shipping-and-launch` | `security-and-hardening` |
 | Performa atau accessibility | skill domain OMP yang tersedia | `code-review-and-quality` |
 
 Skill yang diperlukan lebih dari satu dijalankan sebagai gabungan, bukan dipilih salah satu. Skill tidak boleh meniadakan aturan project atau menggantikan verifikasi nyata.
+
+### Scrapling integration
+
+Scrapling bersifat opsional. Jangan memasang Python package, browser, proxy, atau MCP server kecuali task membutuhkannya dan project menyetujui dependency serta risikonya. Ikuti `skills/scrapling-official/SKILL.md` dan `docs/scrapling.md`. Untuk MCP, gunakan `scrapling-mcp.example.json` sebagai contoh saja; konfigurasi aktif harus berada di client/harness yang digunakan dan secret wajib berasal dari environment/secret manager.
 
 ## Definition of Done
 

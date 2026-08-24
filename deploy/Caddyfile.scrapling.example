@@ -1,0 +1,13 @@
+# Copy to your deployment host and replace the domain.
+# Do not commit private keys or certificates.
+# Caddy obtains/manages certificates only when DNS and the domain are configured.
+
+mcp.example.com {
+    # TLS is automatic when the domain resolves to this host and ports 80/443
+    # are reachable. Use an internal CA or explicit certificates if required.
+    reverse_proxy 127.0.0.1:8000 {
+        header_up Host {host}
+        header_up X-Forwarded-Proto {scheme}
+        header_up X-Forwarded-For {remote_host}
+    }
+}

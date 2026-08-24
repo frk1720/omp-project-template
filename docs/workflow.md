@@ -7,6 +7,7 @@ Template ini membawa workflow engineering reusable ke project baru. Isinya adala
 ```text
 omp-project-template/
 ├── AGENTS.md
+├── scrapling-mcp.example.json
 ├── skills/
 │   ├── spec-driven-development/
 │   ├── planning-and-task-breakdown/
@@ -14,10 +15,13 @@ omp-project-template/
 │   ├── debugging-and-error-recovery/
 │   ├── code-review-and-quality/
 │   ├── security-and-hardening/
-│   └── shipping-and-launch/
+│   ├── shipping-and-launch/
+│   └── scrapling-official/
 └── docs/
-    └── workflow.md
+    ├── workflow.md
+    └── scrapling.md
 ```
+
 
 ## Membuat project baru dari template
 
@@ -70,10 +74,11 @@ Routing utama:
 | Mengubah behavior atau memperbaiki bug | `test-driven-development` |
 | Test/build/runtime failure | `debugging-and-error-recovery` |
 | Review sebelum merge | `code-review-and-quality` |
-| Input, auth, PII, upload, webhook, external API | `security-and-hardening` |
+| Scrape, crawl, dynamic page, adaptive parser, RAG, atau web extraction | `scrapling-official` |
 | Release, deployment, migration, rollout | `shipping-and-launch` |
 
 Jika beberapa kondisi berlaku, gunakan semua skill yang relevan secara berurutan atau gabungan. Skill memberi prosedur; OMP tetap menyediakan tool untuk membaca, mengedit, menjalankan command, menguji runtime, dan mendelegasikan pekerjaan.
+Untuk instalasi, konfigurasi MCP, AI-targeted extraction, adaptive parser, dan spider, lihat `docs/scrapling.md`.
 
 ## Konvensi pekerjaan
 
@@ -100,13 +105,10 @@ Perubahan workflow yang ingin berlaku untuk project baru harus dilakukan di repo
 2. Catat perubahan yang breaking terhadap perilaku agent.
 3. Update project yang sudah dibuat dari template secara terencana.
 4. Jangan mengubah skill project secara diam-diam jika project membutuhkan versi workflow yang stabil.
-
-Template adalah snapshot saat project dibuat; project lama tidak otomatis menerima perubahan template.
-
 ## Checklist sebelum template dipakai
 
 - [ ] `AGENTS.md` sudah memiliki command dan aturan project tujuan.
-- [ ] Semua tujuh skill tersedia di `skills/`.
+- [ ] Semua delapan skill tersedia di `skills/`.
 - [ ] Routing hanya merujuk skill yang tersedia atau menandai skill opsional dengan jelas.
 - [ ] Definition of Done sesuai cara verifikasi project.
 - [ ] Tidak ada spec, task list, secret, credential, atau data project asal.

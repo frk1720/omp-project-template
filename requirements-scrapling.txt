@@ -1,0 +1,3 @@
+# Optional web-scraping integration for OMP projects.
+# Install inside the project's virtual environment when Scrapling is needed.
+scrapling[all]>=0.4.15
